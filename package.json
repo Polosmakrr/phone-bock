@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "lint-staged": "^13.0.3",
+    "prettier-eslint": "^15.0.1"
   }
 }
