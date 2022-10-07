@@ -24,19 +24,19 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="phone-book/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
-          path="/register"
-          element={<RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />}
+          path="register"
+          element={<RestrictedRoute redirectTo="/phone-book/tasks" component={<RegisterPage />} />}
         />
         <Route
-          path="/login"
-          element={<RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />}
+          path="login"
+          element={<RestrictedRoute redirectTo="/phone-book/tasks" component={<LoginPage />} />}
         />
         <Route
-          path="/tasks"
-          element={<PrivateRoute redirectTo="/login" component={<TasksPage />} />}
+          path="tasks"
+          element={<PrivateRoute redirectTo="/phone-book/login" component={<TasksPage />} />}
         />
       </Route>
     </Routes>
