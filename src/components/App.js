@@ -29,14 +29,16 @@ export const App = () => {
         <Route index element={<HomePage />} />
         <Route
           path="register"
-          element={<RestrictedRoute redirectTo="/phone-book/tasks" component={<RegisterPage />} />}
+          element={
+            <RestrictedRoute redirectTo="/phone-book/contacts" component={<RegisterPage />} />
+          }
         />
         <Route
           path="login"
-          element={<RestrictedRoute redirectTo="/phone-book/tasks" component={<LoginPage />} />}
+          element={<RestrictedRoute redirectTo="/phone-book/contacts" component={<LoginPage />} />}
         />
         <Route
-          path="tasks"
+          path="contacts"
           element={<PrivateRoute redirectTo="/phone-book/login" component={<PhoneBookPage />} />}
         />
       </Route>

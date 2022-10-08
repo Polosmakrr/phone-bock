@@ -21,9 +21,15 @@ export default function Tasks() {
     <>
       <h1 className={css.title}>Phone Book</h1>
       <FormInput />
-      {contacts.length >= 1 && <Filter />}
-      <h2 className={css.title}> Contacts</h2>
-      <ContactsList />
+      {contacts.length >= 1 ? (
+        <>
+          <Filter />
+          <h2 className={css.title}> Contacts</h2>
+          <ContactsList />
+        </>
+      ) : (
+        <h2 className={css.title}>Create your first contact</h2>
+      )}
     </>
   );
 }
