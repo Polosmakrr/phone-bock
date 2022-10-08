@@ -1,6 +1,7 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -10,7 +11,7 @@ import { useAuth } from '../hooks/useAuth';
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
-const TasksPage = lazy(() => import('../pages/Tasks'));
+const PhoneBookPage = lazy(() => import('../pages/PhoneBook'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export const App = () => {
         />
         <Route
           path="tasks"
-          element={<PrivateRoute redirectTo="/phone-book/login" component={<TasksPage />} />}
+          element={<PrivateRoute redirectTo="/phone-book/login" component={<PhoneBookPage />} />}
         />
       </Route>
     </Routes>
