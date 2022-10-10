@@ -25,21 +25,19 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="phone-book/" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
           path="register"
-          element={
-            <RestrictedRoute redirectTo="/phone-book/contacts" component={<RegisterPage />} />
-          }
+          element={<RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />}
         />
         <Route
           path="login"
-          element={<RestrictedRoute redirectTo="/phone-book/contacts" component={<LoginPage />} />}
+          element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />}
         />
         <Route
           path="contacts"
-          element={<PrivateRoute redirectTo="/phone-book/login" component={<PhoneBookPage />} />}
+          element={<PrivateRoute redirectTo="/login" component={<PhoneBookPage />} />}
         />
       </Route>
     </Routes>
